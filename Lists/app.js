@@ -2,8 +2,7 @@ const app = Vue.createApp({
     // template: '<h2> I am the template </h2>'
     data () {
         return {
-            url: 'http://www.thenetninja.co.uk',
-            showBooks: true,
+            showBooks: false,
             books: [
                 { title: 'Name of the Wind', author: 'Patrick Rothfuss', img: 'assets/1.jpg', isFav: true },
                 { title: 'The Way of Kings', author: 'Brandon Sanderson', img: 'assets/2.jpg', isFav: false },
@@ -17,14 +16,6 @@ const app = Vue.createApp({
         },
         toggleShowBooks() {
             this.showBooks = !this.showBooks
-        },
-        toggleFav(book) {
-            book.isFav = !book.isFav
-        }
-    },
-    computed: {
-        filteredBooks() {
-            return this.books.filter((book) => book.isFav);
         }
     }
 });
